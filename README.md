@@ -1,4 +1,4 @@
-# aws_lambda_https_request
+# AWS Lambda Website Access Tester
 Test making https calls with python lambda function that includes certificate for proxy ssl inspection
 Both tests will conduct an http test using the requests python library to ipinfo.io
 
@@ -16,3 +16,9 @@ Instructions
 * Note: You can replace the destinatino by modifying the lambda_function.py file in both HTTP and HTTPS to your desired destination
 * Note: It is assumed the destination is allowed via Zscaler policies. If it is blocked the Test will return an expected failure.
 * Note: This test includes the default Zscaler root certificate. If you use a custom enterprise/immediate cert in Zscaler instead of default, replace with yours
+
+Alternatively, you can modify the included python scripts and certificate to suit your needs. If doing this, you need to zip the contents up again before upload to AWS Lambda. This can be done with:
+
+```
+zip -r lambda_project_name.zip .
+```
